@@ -86,8 +86,7 @@ def generateGradeCard(mapping_dict):
 
 
 if __name__ == "__main__":
-	"""Main function, code begins here.
-	"""
+	"""Main function, code begins here"""
 	csv_file_name = 'task1_sample.csv'
 	name_marks_mapping = readMarkSheet(csv_file_name)
 	print(name_marks_mapping)
