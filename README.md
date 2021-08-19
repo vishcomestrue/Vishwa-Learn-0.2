@@ -11,6 +11,7 @@
 </p>
 ```
 #codesnippet.py
+
 fileReader = csv.DictReader(input_file_obj)
 
 for row in fileReader:
