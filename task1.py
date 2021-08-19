@@ -86,6 +86,9 @@ def generateGradeCard(mapping_dict):
 		grade_card[row]['subject_wise_marks'] = grade_card[row]['marks']
 		del grade_card[row]['marks']
 
+		for i in range(0, 5):
+			grade_card[row]['subject_wise_marks'][i] = float(grade_card[row]['subject_wise_marks'][i])
+
 		sum = 0
 		grade = 'none'
 
