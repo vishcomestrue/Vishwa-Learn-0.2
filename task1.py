@@ -93,7 +93,7 @@ def generateGradeCard(mapping_dict):
 		grade = 'none'
 
 		for i in range(0, 5):
-			sum += int(grade_card[row]['subject_wise_marks'][i])
+			sum += float(grade_card[row]['subject_wise_marks'][i])
 
 		percentage = sum/5
 
