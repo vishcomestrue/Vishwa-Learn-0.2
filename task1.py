@@ -81,7 +81,34 @@ def generateGradeCard(mapping_dict):
 
 	##############	ADD YOUR CODE HERE	##############
 
-	
+	grade_card = mapping_dict.copy()
+	for row in grade_card:
+		grade_card[row]['subject_wise_marks'] = grade_card[row]['marks']
+		del grade_card[row]['marks']
+
+		sum = 0
+		grade = 'none'
+
+		for i in range(0, 5):
+			sum += int(grade_card[row]['subject_wise_marks'][i])
+
+		percentage = sum/5
+
+		if percentage >= 90:
+			grade = 'O'
+		elif percentage >= 70:
+			grade = 'A'
+		elif percentage >= 60:
+			grade = 'B'
+		elif percentage >= 50:
+			grade = 'C'
+		elif percentage >= 40:
+			grade = 'D'
+		else:
+			grade = 'Fail'
+
+
+		grade_card[row]['grade'] = grade
 
 	##################################################
 
@@ -93,6 +120,5 @@ if __name__ == "__main__":
 	csv_file_name = 'task1_sample.csv'
 	name_marks_mapping = readMarkSheet(csv_file_name)
 	print(name_marks_mapping)
-	print("************************************")
 	grade_card = generateGradeCard(name_marks_mapping)
 	print(grade_card)
