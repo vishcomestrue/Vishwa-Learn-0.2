@@ -18,7 +18,9 @@
 fileReader = csv.DictReader(input_file_obj)
 
 for row in fileReader:
-	name_marks_mapping[row['name']] = {'marks': [row['subject_1'], row['subject_2'], row['subject_3'], row['subject_4'], row['subject_5']]}
+	name_marks_mapping[row['name']] = { 
+    'marks': [row['subject_1'], row['subject_2'], row['subject_3'], row['subject_4'], row['subject_5']]
+  }
 
 ```
 
