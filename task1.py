@@ -30,7 +30,10 @@ def readMarkSheet(file_name):
 
 	##############	ADD YOUR CODE HERE	##############
 	
-	
+	fileReader = csv.DictReader(input_file_obj)
+
+	for row in fileReader:
+		name_marks_mapping[row['name']] = {'marks': [row['subject_1'], row['subject_2'], row['subject_3'], row['subject_4'], row['subject_5']]}
 
 	##################################################
 	
@@ -77,7 +80,7 @@ def generateGradeCard(mapping_dict):
 	grade_card = {}
 
 	##############	ADD YOUR CODE HERE	##############
-	
+
 	
 
 	##################################################
@@ -90,5 +93,6 @@ if __name__ == "__main__":
 	csv_file_name = 'task1_sample.csv'
 	name_marks_mapping = readMarkSheet(csv_file_name)
 	print(name_marks_mapping)
+	print("************************************")
 	grade_card = generateGradeCard(name_marks_mapping)
 	print(grade_card)
